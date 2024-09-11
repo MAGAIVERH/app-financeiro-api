@@ -1,0 +1,23 @@
+{
+    "name": "app-financeiro-api",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "postinstall": "npx husky install"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@eslint/js": "^9.10.0",
+        "eslint": "^9.10.0",
+        "globals": "^15.9.0",
+        "lint-staged": "^15.2.10"
+    },
+    "dependencies": {
+        "husky": "^8.0.3"
+    }
+}
