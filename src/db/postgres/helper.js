@@ -1,5 +1,7 @@
 /* eslint-disable no-undef */
+import 'dotenv/config'
 import pg from 'pg'
+
 const { Pool } = pg
 
 export const pool = new Pool({
@@ -13,11 +15,11 @@ export const pool = new Pool({
 export const PostgresHelper = {
     query: async (query, params) => {
         const client = await pool.connect()
-
-        const results = await client.query(query, params)
-
-        await client.release()
-
-        return results.rows
+        try {
+            const results = await client.query(query, params)
+            return results.rows
+        } finally {
+            client.release()
+        }
     },
 }
